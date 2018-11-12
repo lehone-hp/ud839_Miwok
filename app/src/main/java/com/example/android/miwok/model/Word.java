@@ -13,6 +13,15 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    /** Image resource ID for the word */
+    private Integer mImageResourceID;
+
+
+    public Word(String defaultTranslation, String miwokTranslation, Integer imageResaourceID) {
+        this(defaultTranslation, miwokTranslation);
+        mImageResourceID = imageResaourceID;
+    }
+
     /**
      * Create a new Word object.
      *
@@ -39,4 +48,14 @@ public class Word {
         return mMiwokTranslation;
     }
 
+    /**
+     * Get the resource ID of the image for the corresponding word
+     */
+    public Integer getImageResourceID() {
+        return mImageResourceID;
+    }
+
+    public boolean hasImage() {
+        return getImageResourceID() != null;
+    }
 }
