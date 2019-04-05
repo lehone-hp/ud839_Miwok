@@ -16,9 +16,11 @@ public class Word {
     /** Image resource ID for the word */
     private Integer mImageResourceID;
 
+    private Integer mAudioResourceID;
 
-    public Word(String defaultTranslation, String miwokTranslation, Integer imageResaourceID) {
-        this(defaultTranslation, miwokTranslation);
+
+    public Word(String defaultTranslation, String miwokTranslation, Integer imageResaourceID, Integer audioResourceID) {
+        this(defaultTranslation, miwokTranslation, audioResourceID);
         mImageResourceID = imageResaourceID;
     }
 
@@ -29,9 +31,10 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, Integer audioResourceID) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceID = audioResourceID;
     }
 
     /**
@@ -53,6 +56,10 @@ public class Word {
      */
     public Integer getImageResourceID() {
         return mImageResourceID;
+    }
+
+    public Integer getAudioResourceID() {
+        return mAudioResourceID;
     }
 
     public boolean hasImage() {
